@@ -6691,3 +6691,5 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in 
 2011-08-16 11:16:03,612 DEBUG [pool-1-thread-5] o.s.b.f.s.DefaultListableBeanFactory [AbstractBeanFactory.java:242] Returning cached instance of singleton bean 'templateDao'
 2011-08-16 11:59:51,612 DEBUG [pool-1-thread-5] o.s.b.f.s.DefaultListableBeanFactory [AbstractBeanFactory.java:242] Returning cached instance of singleton bean 'templateAuthorizer'
 2011-08-16 11:59:51,613 DEBUG [pool-1-thread-5] o.s.b.f.s.DefaultListableBeanFactory [AbstractBeanFactory.java:242] Returning cached instance of singleton bean 'templateDao'
+2011-08-16 12:21:11,462 DEBUG [pool-1-thread-5] o.s.b.f.s.DefaultListableBeanFactory [AbstractBeanFactory.java:242] Returning cached instance of singleton bean 'templateAuthorizer'
+2011-08-16 12:21:11,463 DEBUG [pool-1-thread-5] o.s.b.f.s.DefaultListableBeanFactory [AbstractBeanFactory.java:242] Returning cached instance of singleton bean 'templateDao'

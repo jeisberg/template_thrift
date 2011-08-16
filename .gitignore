@@ -1,7 +1,10 @@
-# Can ignore specific files
+# ignore directory files
 .DS_Store
 
-# Can also ignore all directories and files in a directory.
+# ignore logs
+*.log
+
+# ignore classes
 target/classes
 target/maven-archiver
 target/surefire-reports
