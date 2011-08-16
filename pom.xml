@@ -1,16 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
   	<groupId>com.lockerz.thrift</groupId>
+  	<url>http://maven.apache.org</url>
+  	<modelVersion>4.0.0</modelVersion>
   	<artifactId>template</artifactId>
   	<version>1.0-SNAPSHOT</version>
   	<packaging>jar</packaging>
-	<name>user</name>
-  	<url>http://maven.apache.org</url>
+	<name>template</name>
 	<properties>
-    		<spring.version>3.0.5.RELEASE</spring.version>
-        	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    	<spring.version>3.0.5.RELEASE</spring.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
    	</properties>
   	<dependencies>
 		<dependency>
@@ -38,13 +38,13 @@
                 	<groupId>commons-logging</groupId>
                     <artifactId>commons-logging</artifactId>
                 </exclusion>
-             </exclusions>
+        	</exclusions>
         </dependency>
         <dependency>
         	<groupId>org.springframework</groupId>
         	<artifactId>spring-orm</artifactId>
         	<version>${spring.version}</version>
-        	</dependency>
+        </dependency>
 		<dependency>
     		<groupId>log4j</groupId>
     		<artifactId>log4j</artifactId>
@@ -124,7 +124,7 @@
         	<name>John-Eisbergs-MacBook-Pro-2.local-snapshots</name>
         	<url>http://localhost:8080/artifactory/libs-snapshot-local</url>
     	</snapshotRepository>
-		</distributionManagement>
+	</distributionManagement>
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<testSourceDirectory>src/test/java</testSourceDirectory>
