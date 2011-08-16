@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0" errors="0" skipped="0" tests="0" name="com.lockerz.thrift.DaoTest">
+<testsuite failures="0" time="0.001" errors="0" skipped="0" tests="0" name="com.lockerz.thrift.DaoTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -22,7 +22,7 @@
     <property name="basedir" value="/Users/jeisberg/Documents/workspace/template_thrift"/>
     <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="surefire.real.class.path" value="/var/folders/Np/NpvW3SXVGTm9Rd+rf9X6aE+++TI/-Tmp-/surefirebooter6748054204971381132.jar"/>
+    <property name="surefire.real.class.path" value="/var/folders/Np/NpvW3SXVGTm9Rd+rf9X6aE+++TI/-Tmp-/surefirebooter8612210597465780892.jar"/>
     <property name="java.io.tmpdir" value="/var/folders/Np/NpvW3SXVGTm9Rd+rf9X6aE+++TI/-Tmp-/"/>
     <property name="line.separator" value="
 "/>
