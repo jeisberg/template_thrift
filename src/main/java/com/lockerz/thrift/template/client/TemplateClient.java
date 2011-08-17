@@ -1,17 +1,22 @@
 package com.lockerz.thrift.template.client;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.thrift.TException;
 import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.protocol.TProtocol;
 import org.apache.thrift.transport.TTransport;
-import org.apache.thrift.protocol.TBinaryProtocol;
-
 import com.lockerz.thrift.template.gen.Template;
-import com.lockerz.thrift.template.gen.TemplateServiceException;
-import com.lockerz.thrift.template.gen.TemplateService.Client;
 import com.lockerz.thrift.template.server.Server;
+import org.apache.thrift.protocol.TBinaryProtocol;
+import com.lockerz.thrift.template.gen.TemplateService.Client;
+import com.lockerz.thrift.template.gen.TemplateServiceException;
 
 public class TemplateClient extends ClientImpl {
+	
+	// create the logger here
+	@SuppressWarnings("unused")
+	private static Logger LOG = LoggerFactory.getLogger(TemplateClient.class);
 
 	// need this
 	private static TemplateClient instance = null;
@@ -46,11 +51,11 @@ public class TemplateClient extends ClientImpl {
 			// open the transport here
 			transport.open();
 			// do something here
-			Template userLookup = client.ping(token);
+			Template template = client.ping(token);
 			// close the transport here
 			transport.close();
 			// return here
-			return userLookup;
+			return template;
 		// catch here
 		} catch (TemplateServiceException e) {
 			// throw a client exception

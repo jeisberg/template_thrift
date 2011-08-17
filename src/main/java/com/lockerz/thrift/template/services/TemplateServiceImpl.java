@@ -1,5 +1,7 @@
 package com.lockerz.thrift.template.services;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.thrift.TException;
 import com.lockerz.thrift.template.gen.Template;
 import com.lockerz.thrift.template.dao.DaoException;
@@ -8,6 +10,10 @@ import com.lockerz.thrift.template.utilities.ExceptionHelper;
 import com.lockerz.thrift.template.gen.TemplateServiceException;
 
 public class TemplateServiceImpl extends ServiceImpl {
+	
+	// create the logger here
+	@SuppressWarnings("unused")
+	private static Logger LOG = LoggerFactory.getLogger(TemplateServiceImpl.class);
 
 	// need these
 	public static final int PING = 100;

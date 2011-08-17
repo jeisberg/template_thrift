@@ -1,11 +1,17 @@
 package com.lockerz.thrift.template.dao;
 
+import org.slf4j.Logger;
 import org.hibernate.Session;
+import org.slf4j.LoggerFactory;
+import com.lockerz.thrift.template.server.Server;
 import com.lockerz.thrift.template.dao.DaoException;
 import com.lockerz.thrift.template.models.TemplateModelImpl;
-import com.lockerz.thrift.template.server.Server;
 
 public class TemplateDaoImpl extends DaoImpl {
+	
+	// create the logger here
+	@SuppressWarnings("unused")
+	private static Logger LOG = LoggerFactory.getLogger(TemplateDaoImpl.class);
 	
 	@Override
 	public TemplateModelImpl ping() throws DaoException {

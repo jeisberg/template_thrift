@@ -1,8 +1,14 @@
 package com.lockerz.thrift.template.auth;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.lockerz.thrift.template.utilities.ExceptionHelper;
 
 public class TokenAuthorizerImpl extends AuthorizerImpl {
+	
+	// create the logger here
+	@SuppressWarnings({ "unused" })
+	private static Logger LOG = LoggerFactory.getLogger(TokenAuthorizerImpl.class);
 
 	// need this
 	private String token = null;
