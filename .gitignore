@@ -9,3 +9,6 @@ target/classes/*
 target/maven-archiver/*
 target/surefire-reports/*
 target/test-classes/*
+
+# ignore generated
+thrift/gen-java/*
