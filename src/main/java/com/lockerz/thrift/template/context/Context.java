@@ -1,9 +1,8 @@
 package com.lockerz.thrift.template.context;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import com.lockerz.thrift.template.utilities.PlaceholderConfigurer;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Context {
 	
