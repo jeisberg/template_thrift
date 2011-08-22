@@ -1,1 +1,0 @@
-./target/appassembler/bin/run &> /dev/null &
