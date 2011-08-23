@@ -75,4 +75,44 @@ public class TemplateClient extends ClientImpl {
 			}
 		}
 	}
+	
+	@Override
+	public Template pong(String token) throws ClientException {
+		// need this
+		TTransport transport = null;
+		// try
+		try {
+			// create the transport here
+			transport = new TSocket("localhost", Server.PORT);
+			// create the protocol here
+			TProtocol protocol = new TBinaryProtocol(transport);
+			// get the client here
+			Client client = new Client(protocol);
+			// open the transport here
+			transport.open();
+			// do something here
+			Template template = client.ping(token);
+			// close the transport here
+			transport.close();
+			// return here
+			return template;
+		// catch here
+		} catch (TemplateServiceException e) {
+			// throw a client exception
+			throw new ClientException(e.getMessage(), e.getErrors());
+		// close here
+		} catch (TException t) {
+			// create message
+			String message = this.getClass().getName() + " -> " + t.getMessage();
+			// throw a client exception
+			throw new ClientException(message, null);
+		// close here
+		} finally {
+			// sanity check
+			if(transport != null && transport.isOpen()) {
+				// close here
+				transport.close();
+			}
+		}
+	}
 }

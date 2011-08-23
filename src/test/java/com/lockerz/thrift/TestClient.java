@@ -10,12 +10,23 @@ public class TestClient {
 	private void start(){
 		// try
 		try {
+			
 			// get the instance and go
 			Template template = TemplateClient.getInstance().ping("sometoken");
 			// out put here
 			System.out.println(template);
 			// test commons here
 			System.out.println(Utilities.isNullOrEmpty(null));
+			
+			// get the instance and go
+			template = TemplateClient.getInstance().pong("sometoken");
+			// out put here
+			System.out.println(template);
+			// test commons here
+			System.out.println(Utilities.isNullOrEmpty(null));
+			
+			System.out.println(Utilities.echo("Thrift"));
+			
 		// catch here
 		} catch (ClientException e) {
 			// print here

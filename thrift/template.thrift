@@ -12,4 +12,5 @@ exception TemplateServiceException {
 	 
 service TemplateService {
 	Template ping(1:string token) throws (1:TemplateServiceException e)
+	Template pong(1:string token) throws (1:TemplateServiceException e)
 }

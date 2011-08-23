@@ -5,4 +5,5 @@ import com.lockerz.thrift.template.gen.Template;
 public interface Client {
 	
 	public Template ping(String token) throws ClientException;
+	public Template pong(String token) throws ClientException;
 }
