@@ -12,10 +12,10 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
    	</properties>
 	<scm>
-    	<connection>scm:git:https://github.com/template_thrift</connection>
-    	<developerConnection>scm:git:https://github.com/template_thrift</developerConnection>
+    	<connection>scm:git:https://github.com/jeisberg/template-thrift.git</connection>
+    	<developerConnection>scm:git:https://github.com/jeisberg/template-thrift.git</developerConnection>
     	<tag>HEAD</tag>
-    	<url>https://github.com/template_thrift</url>
+    	<url>https://github.com/jeisberg/template-thrift</url>
   	</scm>
   	<dependencies>
   		<dependency>
