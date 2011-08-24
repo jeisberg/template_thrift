@@ -44,28 +44,4 @@ public class TemplateServiceImpl extends ServiceImpl {
 			throw ExceptionHelper.fatal(FATAL, e.getMessage());
 		}
 	}
-
-	@Override
-	public Template pong(String token) throws TemplateServiceException, TException {
-		// initialize tokens
-		super.init(token, PING);
-		// try
-		try {
-			// need this
-			Template template = null;
-			// slug here
-			TemplateModelImpl row = dao.ping();
-			// sanity check
-			if(row != null) {
-				// set the template here
-				template = new Template(row.getId(), row.getPort());
-			}
-			// return here
-			return template;
-		// catch and throw here
-		} catch(DaoException e) {
-			// throw here
-			throw ExceptionHelper.fatal(FATAL, e.getMessage());
-		}
-	}
 }

@@ -25,7 +25,7 @@ public class TestClient {
 			// test commons here
 			System.out.println(Utilities.isNullOrEmpty(null));
 			
-			System.out.println(Utilities.echo("Thrift"));
+			System.out.println(Utilities.isNullOrEmpty("Thrift"));
 			
 		// catch here
 		} catch (ClientException e) {
