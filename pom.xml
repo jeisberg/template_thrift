@@ -22,7 +22,7 @@
   		<dependency>
     		<groupId>com.lockerz.thrift</groupId>
     		<artifactId>commons</artifactId>
-    		<version>3.1-20110823.201217-1</version>
+    		<version>30.0</version>
 	</dependency>
 		<dependency>
    			<groupId>c3p0</groupId>
