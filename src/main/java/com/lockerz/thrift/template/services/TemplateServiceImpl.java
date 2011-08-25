@@ -6,6 +6,7 @@ import org.apache.thrift.TException;
 import com.lockerz.thrift.template.gen.Template;
 import com.lockerz.thrift.template.dao.DaoException;
 import com.lockerz.thrift.template.models.TemplateModelImpl;
+import com.lockerz.thrift.template.server.Server;
 import com.lockerz.thrift.template.utilities.ExceptionHelper;
 import com.lockerz.thrift.template.gen.TemplateServiceException;
 
@@ -43,5 +44,17 @@ public class TemplateServiceImpl extends ServiceImpl {
 			// throw here
 			throw ExceptionHelper.fatal(FATAL, e.getMessage());
 		}
+	}
+
+	@Override
+	public String echo(String token, String target) throws TemplateServiceException, TException {
+		// return here
+		return target;
+	}
+
+	@Override
+	public long getPort(String token) throws TemplateServiceException, TException {
+		// return here
+		return Server.PORT;
 	}
 }

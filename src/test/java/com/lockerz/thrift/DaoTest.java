@@ -11,6 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class DaoTest {
 
     public static void main(String[] args) {
+    	
     	// get the context here
     	ApplicationContext context = new ClassPathXmlApplicationContext(PlaceholderConfigurer.HANDLE + ".xml"); 	
         // get the template service here

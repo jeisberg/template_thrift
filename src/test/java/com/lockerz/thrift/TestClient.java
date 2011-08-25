@@ -1,6 +1,5 @@
 package com.lockerz.thrift;
 
-import com.lockerz.thrift.commons.utilities.Utilities;
 import com.lockerz.thrift.template.gen.Template;
 import com.lockerz.thrift.template.client.TemplateClient;
 import com.lockerz.thrift.template.client.ClientException;
@@ -15,17 +14,12 @@ public class TestClient {
 			Template template = TemplateClient.getInstance().ping("sometoken");
 			// out put here
 			System.out.println(template);
-			// test commons here
-			System.out.println(Utilities.isNullOrEmpty(null));
 			
-			// get the instance and go
-			template = TemplateClient.getInstance().pong("sometoken");
-			// out put here
-			System.out.println(template);
-			// test commons here
-			System.out.println(Utilities.isNullOrEmpty(null));
+			String echo = TemplateClient.getInstance().echo("sometoken", "hello world");
+			System.out.println(echo);
 			
-			System.out.println(Utilities.isNullOrEmpty("Thrift"));
+			long port = TemplateClient.getInstance().getPort("sometoke");
+			System.out.println(port);
 			
 		// catch here
 		} catch (ClientException e) {
