@@ -45,16 +45,4 @@ public class TemplateServiceImpl extends ServiceImpl {
 			throw ExceptionHelper.fatal(FATAL, e.getMessage());
 		}
 	}
-
-	@Override
-	public String echo(String token, String target) throws TemplateServiceException, TException {
-		// return here
-		return target;
-	}
-
-	@Override
-	public long getPort(String token) throws TemplateServiceException, TException {
-		// return here
-		return Server.PORT;
-	}
 }

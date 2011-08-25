@@ -1,16 +1,19 @@
 package com.lockerz.thrift;
 
+import junit.framework.TestCase;
 import org.apache.thrift.TException;
 import com.lockerz.thrift.template.gen.Template;
 import org.springframework.context.ApplicationContext;
+
+import com.lockerz.thrift.template.server.Server;
 import com.lockerz.thrift.template.services.TemplateServiceImpl;
 import com.lockerz.thrift.template.gen.TemplateServiceException;
 import com.lockerz.thrift.template.utilities.PlaceholderConfigurer;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class ServiceTest {
+public class ServiceTest extends TestCase {
 
-    public static void main(String[] args) {
+    public void test() {
     	// get the context here
     	ApplicationContext context = new ClassPathXmlApplicationContext(PlaceholderConfigurer.HANDLE + ".xml"); 	
         // get the template service here
@@ -21,23 +24,13 @@ public class ServiceTest {
         try { 
         	// get the user lookup
         	template = templateService.ping("sometoken");
-        	// output here
-        	System.out.println(template);
+        	// assert here
+        	assertEquals(template.getId(), TemplateServiceImpl.PING);
+        	// assert here
+        	assertEquals(template.getPort(), Server.PORT);
         // catch here
         } catch(TemplateServiceException e) {
-        	// output here
-        	System.out.println(e.getMessage());
-        	// output here
-        	System.out.println(e.getErrors());
-        	// print the stack
-        	e.printStackTrace();
         } catch(TException t) {
-        	// output here
-        	System.out.println(t.getMessage());
-        	// print the stack
-        	t.printStackTrace();
         }
-        // exit here
-    	System.exit(0);
     }
 }

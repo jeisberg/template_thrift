@@ -12,6 +12,4 @@ exception TemplateServiceException {
 	 
 service TemplateService {
 	Template ping(1:string token) throws (1:TemplateServiceException e)
-	string echo(1:string token, 2:string target) throws (1:TemplateServiceException e)
-	i64 getPort(1:string token) throws (1:TemplateServiceException e)
 }
