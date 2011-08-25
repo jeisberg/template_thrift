@@ -15,12 +15,6 @@ public class TestClient {
 			// out put here
 			System.out.println(template);
 			
-			String echo = TemplateClient.getInstance().echo("sometoken", "hello world");
-			System.out.println(echo);
-			
-			long port = TemplateClient.getInstance().getPort("sometoke");
-			System.out.println(port);
-			
 		// catch here
 		} catch (ClientException e) {
 			// print here
