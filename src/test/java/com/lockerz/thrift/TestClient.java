@@ -9,12 +9,10 @@ public class TestClient {
 	private void start(){
 		// try
 		try {
-			
 			// get the instance and go
 			Template template = TemplateClient.getInstance().ping("sometoken");
 			// out put here
-			System.out.println(template);
-			
+			System.out.println(template);	
 		// catch here
 		} catch (ClientException e) {
 			// print here

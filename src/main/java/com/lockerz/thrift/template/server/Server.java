@@ -3,11 +3,9 @@ package com.lockerz.thrift.template.server;
 import org.apache.thrift.server.*;
 import org.apache.thrift.protocol.*;
 import org.apache.thrift.transport.*;
-
+import org.apache.thrift.protocol.TBinaryProtocol.*;
 import com.lockerz.thrift.template.gen.TemplateService;
 import com.lockerz.thrift.template.services.TemplateServiceImpl;
-
-import org.apache.thrift.protocol.TBinaryProtocol.*;
 
 public class Server {
 	
