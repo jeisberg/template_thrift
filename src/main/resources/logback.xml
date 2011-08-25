@@ -17,4 +17,9 @@
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="FILE" />
 	</root>
+	<logger name="com.mchange.v2.log.MLog">
+    	<level value="WARN"/>
+    	<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+  	</logger>
 </configuration>
