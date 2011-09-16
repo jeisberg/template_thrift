@@ -1,4 +1,4 @@
-# LOCAL CONFIGURATIONS
+# PRODUCTION CONFIGURATIONS
 
 # memcache configurations
 hibernate.cache.use_query_cache=false

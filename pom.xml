@@ -7,10 +7,13 @@
   	<packaging>jar</packaging>
 	<name>template</name>
 	<properties>
+		<environment.uat>uat</environment.uat>
+		<environment.local>local</environment.local>
+		<environment.production>production</environment.production>
     	<spring.version>3.0.5.RELEASE</spring.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-   	</properties>
+    </properties>
 	<scm>
     	<connection>scm:git:https://github.com/jeisberg/template_thrift.git</connection>
     	<developerConnection>scm:git:https://github.com/jeisberg/template_thrift.git</developerConnection>
@@ -21,7 +24,7 @@
   		<dependency>
     		<groupId>com.lockerz.thrift</groupId>
     		<artifactId>commons</artifactId>
-    		<version>1.0-20110824.183824-1</version>
+    		<version>1.0-20110825.212538-1</version>
 		</dependency>
 		<dependency>
    			<groupId>c3p0</groupId>
@@ -58,6 +61,11 @@
 		<dependency>
     		<groupId>org.slf4j</groupId>
     		<artifactId>log4j-over-slf4j</artifactId>
+    		<version>1.6.1</version>
+		</dependency>
+		<dependency>
+    		<groupId>org.slf4j</groupId>
+    		<artifactId>jcl-over-slf4j</artifactId>
     		<version>1.6.1</version>
 		</dependency>
 		<dependency>
@@ -176,4 +184,132 @@
         	</plugin> 
     	</plugins>
 	</build>
+	<profiles>
+   		<profile>
+     		<id>local</id>
+     		<build>
+       			<plugins>
+         			<plugin>
+           				<artifactId>maven-antrun-plugin</artifactId>
+           				<executions>
+           					<execution>
+               					<phase>test</phase>
+               					<goals>
+                 					<goal>run</goal>
+               					</goals>
+               					<configuration>
+                 					<tasks>
+                   						<delete file="${project.build.outputDirectory}/template.properties"/>
+                   						<copy file="src/main/resources/template.properties.${environment.local}" tofile="${project.build.outputDirectory}/template.properties"/>
+                 					</tasks>
+               					</configuration>
+             				</execution>
+           				</executions>
+         			</plugin>
+         			<plugin>
+           				<artifactId>maven-jar-plugin</artifactId>
+           				<executions>
+             				<execution>
+               					<phase>package</phase>
+               					<goals>
+                 					<goal>jar</goal>
+               					</goals>
+               					<configuration>
+                 					<classifier>${environment.local}</classifier>
+               					</configuration>
+             				</execution>
+           				</executions>
+         			</plugin>
+       			</plugins>
+			</build>
+   		</profile>
+   		<profile>
+     		<id>uat</id>
+     		<build>
+       			<plugins>
+         			<plugin>
+           				<artifactId>maven-antrun-plugin</artifactId>
+           				<executions>
+           					<execution>
+               					<phase>test</phase>
+               					<goals>
+                 					<goal>run</goal>
+               					</goals>
+               					<configuration>
+                 					<tasks>
+                   						<delete file="${project.build.outputDirectory}/template.properties"/>
+                   						<copy file="src/main/resources/template.properties.${environment.uat}" tofile="${project.build.outputDirectory}/template.properties"/>
+                 					</tasks>
+               					</configuration>
+             				</execution>
+           				</executions>
+         			</plugin>
+         			<plugin>
+           				<artifactId>maven-surefire-plugin</artifactId>
+           				<configuration>
+             				<skip>true</skip>
+           				</configuration>
+         			</plugin>
+         			<plugin>
+           				<artifactId>maven-jar-plugin</artifactId>
+           				<executions>
+             				<execution>
+               					<phase>package</phase>
+               					<goals>
+                 					<goal>jar</goal>
+               					</goals>
+               					<configuration>
+                 					<classifier>${environment.uat}</classifier>
+               					</configuration>
+             				</execution>
+           				</executions>
+         			</plugin>
+       			</plugins>
+			</build>
+   		</profile>
+   		<profile>
+     		<id>production</id>
+     		<build>
+       			<plugins>
+         			<plugin>
+           				<artifactId>maven-antrun-plugin</artifactId>
+           				<executions>
+           					<execution>
+               					<phase>test</phase>
+               					<goals>
+                 					<goal>run</goal>
+               					</goals>
+               					<configuration>
+                 					<tasks>
+                   						<delete file="${project.build.outputDirectory}/template.properties"/>
+                   						<copy file="src/main/resources/template.properties.${environment.production}" tofile="${project.build.outputDirectory}/template.properties"/>
+                 					</tasks>
+               					</configuration>
+             				</execution>
+           				</executions>
+         			</plugin>
+         			<plugin>
+           				<artifactId>maven-surefire-plugin</artifactId>
+           				<configuration>
+             				<skip>true</skip>
+           				</configuration>
+         			</plugin>
+         			<plugin>
+           				<artifactId>maven-jar-plugin</artifactId>
+           				<executions>
+             				<execution>
+               					<phase>package</phase>
+               					<goals>
+                 					<goal>jar</goal>
+               					</goals>
+               					<configuration>
+                 					<classifier>${environment.production}</classifier>
+               					</configuration>
+             				</execution>
+           				</executions>
+         			</plugin>
+       			</plugins>
+			</build>
+   		</profile>
+ 	</profiles>
 </project>
